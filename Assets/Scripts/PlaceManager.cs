@@ -5,7 +5,9 @@ using UnityEngine;
 public class PlaceManager : MonoBehaviour
 {
     private PlaceIndicator placeIndicator;
-    [SerializeField] GameObject objectToPlace;
+    public GameObject[] objectToPlace;
+    public GameObject placeButton;
+    public GameObject toolsPanel;
 
     private GameObject newPlacedObject;
 
@@ -13,9 +15,22 @@ public class PlaceManager : MonoBehaviour
     {
         placeIndicator = FindObjectOfType<PlaceIndicator>(); 
     }
+    private void Update() 
+    {
+        if(placeIndicator.isIndicatorThere == false)
+        {
+            placeButton.SetActive(false);
+            toolsPanel.SetActive(false);
+        }
+        else
+        {
+            placeButton.SetActive(true);
+            toolsPanel.SetActive(true);
+        }
+    }
 
     public void PlaceObject()
     {
-        newPlacedObject = Instantiate(objectToPlace, placeIndicator.transform.position, placeIndicator.transform.rotation);
+        newPlacedObject = Instantiate(objectToPlace[PlayerPrefs.GetInt("selectedTool",0)], placeIndicator.transform.position, placeIndicator.transform.rotation);
     }
 }

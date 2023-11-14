@@ -9,6 +9,7 @@ public class PlaceIndicator : MonoBehaviour
     private ARRaycastManager rayManager;
     private GameObject indicator;
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    public bool isIndicatorThere;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class PlaceIndicator : MonoBehaviour
         indicator = transform.GetChild(0).gameObject;
 
         indicator.SetActive(false);
+        isIndicatorThere = false;
     }
 
     void Update()
@@ -31,6 +33,7 @@ public class PlaceIndicator : MonoBehaviour
             if(!indicator.activeInHierarchy)
             {
                 indicator.SetActive(true);
+                isIndicatorThere = true;
             }
         }
     }
