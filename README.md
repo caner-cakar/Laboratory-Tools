@@ -8,7 +8,7 @@ Geliştirme ortamı:
   - Artırılmış Gerçeklik (AR) Platformu: AR Foundation, ARCore.
   - Programlama Dili: C#.
 
-Proje bilgiler:
+Proje bilgileri:
   - Temel mekanikler
       - Laboratuvar aletlerini gerçek dünya üzerine yerleştirme
       - Yerleştirilen aletlerin üstüne dokunarak onlara ait bilgiyi gösterme
