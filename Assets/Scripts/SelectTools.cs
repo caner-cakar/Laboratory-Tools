@@ -13,6 +13,7 @@ public class SelectTools : MonoBehaviour
         foreach(GameObject body in tools)
             body.SetActive(false);
         tools[selectedTool].SetActive(true);
+        PlayerPrefs.SetInt("selectedTool",selectedTool);
     }
 
     public void ChangeNext()
